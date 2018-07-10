@@ -1,20 +1,19 @@
+const initCap = stringInput => {
+  let newStr = stringInput
+    .split(" ")
+    .map(
+      eachString =>
+        eachString[0].toUpperCase() + eachString.substr(1).toLowerCase()
+    );
+  return newStr;
+};
 const titleCase = (originalString, minorWords) => {
   let result = "";
   if (minorWords === undefined) {
-    result = originalString
-      .split(" ")
-      .map(
-        eachString =>
-          eachString[0].toUpperCase() + eachString.substr(1).toLowerCase()
-      );
+    result = initCap(originalString);
   } else {
     let splitMinor = minorWords.split(" ");
-    result = originalString
-      .split(" ")
-      .map(
-        eachString =>
-          eachString[0].toUpperCase() + eachString.substr(1).toLowerCase()
-      );
+    result = initCap(originalString);
     for (let i = 1; i < result.length; i++) {
       for (let j = 0; j < splitMinor.length; j++) {
         if (result[i].toLowerCase() === splitMinor[j].toLowerCase()) {
