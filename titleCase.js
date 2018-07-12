@@ -7,6 +7,7 @@ const initCap = stringInput => {
     );
   return newStr;
 };
+//need to handle for empty originalString
 const titleCase = (originalString, minorWords) => {
   let result = "";
   if (minorWords === undefined) {
